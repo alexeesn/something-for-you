@@ -1,0 +1,201 @@
+:root {
+  --bg: #ffeef5;
+  --primary: #ff6fa5;
+  --light: #ffd6e7;
+  --accent: #ff9fc0;
+  --text: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* LOADING */
+
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+/* SECTIONS */
+
+.section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s;
+}
+
+.section.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* CARD */
+
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 90%;
+}
+
+/* PROFILE IMAGE */
+
+.circle-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://via.placeholder.com/300");
+}
+
+/* GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* THUMBNAIL */
+
+.music-thumb {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: block;
+}
+
+/* BUTTON */
+
+button {
+  background: var(--primary);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: var(--accent);
+}
+
+/* LETTER */
+
+.letter {
+  font-family: "Dancing Script", cursive;
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* SECRET */
+
+#secretBtn {
+  margin-top: 20px;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+/* HEARTS */
+
+.heart {
+  position: fixed;
+  color: #ff6fa5;
+  animation: rise 6s linear infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .card {
+    padding: 30px;
+  }
+  .letter {
+    font-size: 20px;
+  }
+  .gallery img {
+    height: 120px;
+  }
+}
+.circle-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  object-fit: cover;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

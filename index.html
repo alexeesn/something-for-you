@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Something For You</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="loading">
+      <h2>Preparing something special...</h2>
+    </div>
+
+    <!-- STEP 1 -->
+
+    <div class="section active" id="step1">
+      <div class="card">
+        <img src="cat1.jpg" class="circle-img" />
+
+        <h2>Hi Shiena 👋</h2>
+        <p>I made this small website for you.</p>
+
+        <button onclick="next(2)">Hello</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+
+    <div class="section" id="step2">
+      <div class="card">
+        <img src="cat2.jpg" class="circle-img" />
+        <h2>Thanks for clicking 😄</h2>
+        <p>Can I ask you something?</p>
+
+        <button onclick="next(3)">Sure</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+
+    <div class="section" id="step3">
+      <div class="card">
+        <img src="cat 3.jpg" class="circle-img" />
+        <h2>Do you like surprises?</h2>
+
+        <button onclick="next(4)">Yes</button>
+        <button onclick="next(4)">Maybe</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+
+    <div class="section" id="step4">
+      <div class="card">
+        <h2>Here are some pictures of you that I really like.</h2>
+
+        <div class="gallery">
+          <img src="anehs1.jpg" />
+          <img src="anehs2.jpg" />
+          <img src="anehs3.jpg" />
+          <img src="anehs4.jpg" />
+        </div>
+        <button onclick="next(5)">Continue</button>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+
+    <div class="section" id="step5">
+      <div class="card">
+        <h2>Can you listen to this for a little while?</h2>
+
+        <img src="thumbnail.jpg" class="music-thumb" />
+
+        <button onclick="playSong()">Play / Pause</button>
+
+        <p id="lyrics" style="margin-top: 15px"></p>
+
+        <button onclick="next(6)">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+
+    <div class="section" id="step6">
+      <div class="card">
+        <div class="letter" id="letterText"></div>
+
+        <button id="secretBtn" onclick="showSecret()">Secret</button>
+      </div>
+    </div>
+
+    <!-- SECRET PAGE -->
+
+    <div class="section" id="secretPage">
+      <div class="card">
+        <h2>Secret Page</h2>
+
+        <input id="password" placeholder="Enter password" />
+
+        <button onclick="checkPassword()">Open</button>
+
+        <p id="secretMessage"></p>
+      </div>
+    </div>
+
+    <!-- AUDIO -->
+
+    <audio id="song1" loop>
+      <source
+        src="Alexandra - Reality Club (Official Lyric Video)-[AudioTrimmer.com] (1).mp3"
+      />
+    </audio>
+
+    <audio id="song2" loop>
+      <source src="The 1975 - About You (Official).mp3" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
